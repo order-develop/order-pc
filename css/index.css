@@ -1,0 +1,284 @@
+@charset "UTF-8";
+/*
+* @name：订餐系统后台管理
+* @author：孟鑫
+*/
+@font-face {
+  font-family: 'BrushScriptStd';
+  font-weight: normal;
+  font-style: normal; }
+html, body {
+  font: 14px/1.5, "微软雅黑", "Microsoft YaHei", Helvetica, "Helvetica Neue", Tahoma, Arial, sans-serif;
+  color: #666666;
+  background-color: #ffffff;
+  height: 100%; }
+
+.clearfix:after {
+  content: "";
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both; }
+
+.clearfix {
+  zoom: 1; }
+
+/**************************** 内容 start ****************************/
+.nav {
+  height: 80px;
+  background: #0069b6;
+  color: #fff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5); }
+  .nav .title {
+    font-size: 24px;
+    padding: 0 50px;
+    line-height: 80px;
+    font-weight: 600; }
+  .nav .user-login {
+    color: #fff;
+    float: right;
+    padding: 0 50px;
+    font-size: 14px;
+    line-height: 80px; }
+
+.wrapper-content {
+  height: calc(100% - 83px); }
+  .wrapper-content .left-menu {
+    float: left;
+    background-color: #E4EBF5;
+    margin-top: 3px;
+    width: 250px;
+    height: 100%;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5); }
+    .wrapper-content .left-menu .management, .wrapper-content .left-menu .role-management {
+      line-height: 38px;
+      font-size: 17px;
+      text-align: center;
+      cursor: pointer; }
+      .wrapper-content .left-menu .management:hover, .wrapper-content .left-menu .role-management:hover {
+        background: #026ab3;
+        color: #ffffff; }
+    .wrapper-content .left-menu .column {
+      width: 100%;
+      line-height: 38px; }
+      .wrapper-content .left-menu .column li {
+        cursor: pointer; }
+        .wrapper-content .left-menu .column li span {
+          width: 140px;
+          float: right; }
+        .wrapper-content .left-menu .column li:hover {
+          background: #80b328;
+          color: white; }
+    .wrapper-content .left-menu .active {
+      background: #026ab3;
+      color: #ffffff; }
+  .wrapper-content .li_active {
+    background: #80b328;
+    color: white; }
+  .wrapper-content .right-list {
+    float: right;
+    width: calc(100% - 250px);
+    height: 100%;
+    padding: 10px 30px; }
+    .wrapper-content .right-list .list-title {
+      color: #026ab3;
+      line-height: 38px; }
+      .wrapper-content .right-list .list-title .find-nav {
+        float: left; }
+      .wrapper-content .right-list .list-title .data-time {
+        width: 25%;
+        float: right; }
+      .wrapper-content .right-list .list-title .num {
+        width: 18%;
+        float: right; }
+      .wrapper-content .right-list .list-title .btnGroup {
+        float: right; }
+      .wrapper-content .right-list .list-title .startTime, .wrapper-content .right-list .list-title .endTime {
+        padding: 0 15px 0 0; }
+        .wrapper-content .right-list .list-title .startTime span, .wrapper-content .right-list .list-title .endTime span {
+          display: inline-block; }
+        .wrapper-content .right-list .list-title .startTime input, .wrapper-content .right-list .list-title .endTime input {
+          display: inline-block;
+          width: 200px; }
+  .wrapper-content .indent-list {
+    border: 1px solid #f3f3f3;
+    margin-top: 20px; }
+    .wrapper-content .indent-list .list-title {
+      color: #026ab3;
+      background: #f3f3f3; }
+      .wrapper-content .indent-list .list-title li {
+        float: left; }
+      .wrapper-content .indent-list .list-title .name {
+        width: 130px;
+        text-align: left; }
+        .wrapper-content .indent-list .list-title .name span {
+          margin-left: 15px; }
+      .wrapper-content .indent-list .list-title .cell-phone {
+        width: 120px;
+        text-align: left; }
+      .wrapper-content .indent-list .list-title .last-time {
+        width: 240px;
+        text-align: left; }
+    .wrapper-content .indent-list .theList .list-content {
+      line-height: 40px;
+      border-bottom: 1px solid #f3f3f3; }
+      .wrapper-content .indent-list .theList .list-content li {
+        float: left; }
+      .wrapper-content .indent-list .theList .list-content .user-name {
+        width: 130px;
+        text-align: left; }
+        .wrapper-content .indent-list .theList .list-content .user-name label {
+          padding-left: 10px; }
+        .wrapper-content .indent-list .theList .list-content .user-name span {
+          margin-left: 15px; }
+        .wrapper-content .indent-list .theList .list-content .user-name input {
+          width: 40px;
+          float: left; }
+      .wrapper-content .indent-list .theList .list-content .user-phone {
+        width: 120px;
+        text-align: left; }
+      .wrapper-content .indent-list .theList .list-content .user-last-time {
+        width: 240px;
+        text-align: left; }
+      .wrapper-content .indent-list .theList .list-content .operation-btn {
+        float: right;
+        margin: 0 30px; }
+    .wrapper-content .indent-list .theList .nodata img {
+      display: block;
+      margin: 100px auto; }
+    .wrapper-content .indent-list .list-footer ul {
+      line-height: 40px; }
+      .wrapper-content .indent-list .list-footer ul li {
+        float: left; }
+      .wrapper-content .indent-list .list-footer ul #paging {
+        float: right;
+        margin: 0 25px; }
+      .wrapper-content .indent-list .list-footer ul .all-check {
+        margin: 0 10px; }
+      .wrapper-content .indent-list .list-footer ul button {
+        margin: 0 20px; }
+  .wrapper-content .layui-btn {
+    background: #0069b6;
+    height: 30px;
+    line-height: 30px; }
+
+.layui-btn-disabled {
+  background: #f3f3f3 !important; }
+
+/**************************** 内容 end ****************************/
+/**************************** 弹窗 end ****************************/
+#popup .popup-content-box {
+  display: block;
+  margin: 20px;
+  border: 1px solid #f3f3f3; }
+  #popup .popup-content-box .popup-list-title {
+    color: #026ab3;
+    background: #f3f3f3; }
+    #popup .popup-content-box .popup-list-title li {
+      float: left;
+      padding: 5px 0; }
+    #popup .popup-content-box .popup-list-title .name {
+      width: 130px;
+      text-align: left; }
+      #popup .popup-content-box .popup-list-title .name span {
+        margin-left: 15px; }
+    #popup .popup-content-box .popup-list-title .cell-phone {
+      width: 120px;
+      text-align: left; }
+    #popup .popup-content-box .popup-list-title .last-time {
+      width: 200px;
+      text-align: left; }
+  #popup .popup-content-box .list-content {
+    line-height: 40px;
+    border-bottom: 1px solid #f3f3f3; }
+    #popup .popup-content-box .list-content li {
+      float: left; }
+    #popup .popup-content-box .list-content .user-name {
+      width: 130px;
+      text-align: left; }
+      #popup .popup-content-box .list-content .user-name label {
+        padding-left: 10px; }
+      #popup .popup-content-box .list-content .user-name span {
+        margin-left: 15px; }
+      #popup .popup-content-box .list-content .user-name input {
+        width: 40px;
+        float: left; }
+    #popup .popup-content-box .list-content .user-phone {
+      width: 120px;
+      text-align: left; }
+    #popup .popup-content-box .list-content .user-last-time, #popup .popup-content-box .list-content .user-list-time {
+      width: 200px;
+      text-align: left; }
+#popup .close-btn-box {
+  position: absolute;
+  bottom: 15px;
+  left: 668px;
+  right: 0;
+  margin: 0 auto; }
+  #popup .close-btn-box .close-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0 auto; }
+
+/**************************** 弹窗 start ****************************/
+/**************************** 分页 start ****************************/
+.pager > li {
+  display: inline-block;
+  min-width: 30px;
+  height: 30px;
+  padding: 5px;
+  margin: 0 2px;
+  line-height: 20px;
+  border-radius: 3px;
+  border: 1px solid #666666; }
+  .pager > li > i {
+    font-size: 12px; }
+  .pager > li.active {
+    color: #FFFFFF;
+    background: #4aacee;
+    border: 1px solid #4aacee;
+    cursor: default; }
+    .pager > li.active:hover {
+      color: #FFFFFF;
+      border: 1px solid #4aacee;
+      cursor: default; }
+  .pager > li.disabled {
+    color: #d6d6d6;
+    border: 1px solid #d6d6d6;
+    cursor: not-allowed; }
+    .pager > li.disabled:hover {
+      color: #d6d6d6;
+      border: 1px solid #d6d6d6;
+      cursor: not-allowed; }
+  .pager > li:hover {
+    color: #4aacee;
+    border: 1px solid #4aacee;
+    cursor: pointer; }
+  .pager > li.total {
+    border: none; }
+    .pager > li.total:hover {
+      color: #666666;
+      border: none;
+      cursor: default; }
+  .pager > li .PageNum {
+    width: 30px;
+    padding: 0;
+    border: none;
+    text-align: center; }
+    .pager > li .PageNum::-webkit-outer-spin-button, .pager > li .PageNum::-webkit-inner-spin-button {
+      -webkit-appearance: none; }
+    .pager > li .PageNum[type="number"] {
+      -moz-appearance: textfield; }
+
+/**************************** 分页 end ****************************/
+/****************************** 响应式 开始 ******************************/
+@media screen and (max-width: 1366px) {
+  .wrapper-content {
+    width: 1366px; }
+
+  .nav {
+    width: 1366px; } }
+/****************************** 响应式 结束 ******************************/

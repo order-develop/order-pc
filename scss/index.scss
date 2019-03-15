@@ -1,0 +1,385 @@
+@charset "UTF-8";
+@import "_basics.scss";
+
+/*
+* @name：订餐系统后台管理
+* @author：孟鑫
+*/
+@font-face {
+  font-family: 'BrushScriptStd';
+  font-weight: normal;
+  font-style: normal;
+}
+
+html, body {
+  font: 14px/1.5, "微软雅黑", "Microsoft YaHei", Helvetica, "Helvetica Neue", Tahoma, Arial, sans-serif;
+  color: #666666;
+  background-color: #ffffff;
+  height: 100%;
+}
+
+.clearfix:after {
+  content: "";
+  height: 0;
+  line-height: 0;
+  display: block;
+  visibility: hidden;
+  clear: both
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+/**************************** 内容 start ****************************/
+.nav {
+  height: 80px;
+  background: #0069b6;
+  color: #fff;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
+  .title {
+    font-size: 24px;
+    padding: 0 50px;
+    line-height: 80px;
+    font-weight: 600;
+  }
+  .user-login {
+    color: #fff;
+    float: right;
+    padding: 0 50px;
+    font-size: 14px;
+    line-height: 80px;
+  }
+}
+
+.wrapper-content {
+  height: calc(100% - 83px);
+  .left-menu {
+    float: left;
+    background-color: #E4EBF5;
+    margin-top: 3px;
+    width: 250px;
+    height: 100%;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.5);
+    .management, .role-management {
+      line-height: 38px;
+      font-size: 17px;
+      text-align: center;
+      cursor: pointer;
+      &:hover {
+        background: #026ab3;
+        color: #ffffff;
+      }
+    }
+    .column {
+      width: 100%;
+      line-height: 38px;
+      li {
+        cursor: pointer;
+        span {
+          width: 140px;
+          float: right;
+        }
+        &:hover {
+          background: #80b328;
+          color: white;
+        }
+      }
+    }
+    .active {
+      background: #026ab3;
+      color: #ffffff;
+    }
+  }
+  .li_active {
+    background: #80b328;
+    color: white;
+  }
+  .right-list {
+    float: right;
+    width: calc(100% - 250px);
+    height: 100%;
+    padding: 10px 30px;
+    .list-title {
+      color: #026ab3;
+      line-height: 38px;
+      .find-nav {
+        float: left;
+      }
+      .data-time {
+        width: 25%;
+        float: right;
+      }
+      .num {
+        width: 18%;
+        float: right;
+      }
+      .btnGroup{
+        float: right;
+      }
+      .startTime,.endTime{
+        padding: 0 15px 0 0 ;
+        span{
+          display: inline-block;
+        }
+        input{
+          display: inline-block;
+          width: 200px;
+        }
+      }
+      .screen{
+
+      }
+    }
+  }
+  .indent-list {
+    border: 1px solid #f3f3f3;
+    margin-top: 20px;
+    .list-title {
+      color: #026ab3;
+      background: #f3f3f3;
+      li {
+        float: left;
+      }
+      .name {
+        width: 130px;
+        text-align: left;
+        span {
+          margin-left: 15px;
+        }
+      }
+      .cell-phone {
+        width: 120px;
+        text-align: left;
+      }
+      .last-time {
+        width: 240px;
+        text-align: left;
+      }
+    }
+    .theList {
+      .list-content {
+        line-height: 40px;
+        border-bottom: 1px solid #f3f3f3;
+        li {
+          float: left;
+        }
+        .user-name {
+          width: 130px;
+          text-align: left;
+          label {
+            padding-left: 10px;
+          }
+          span {
+            margin-left: 15px;
+          }
+          input {
+            width: 40px;
+            float: left;
+          }
+        }
+        .user-phone {
+          width: 120px;
+          text-align: left;
+        }
+        .user-last-time {
+          width: 240px;
+          text-align: left;
+        }
+        .operation-btn {
+          float: right;
+          margin: 0 30px;
+        }
+      }
+      .nodata{
+        img{
+          display: block;
+          margin: 100px auto;
+        }
+      }
+    }
+    .list-footer {
+      ul {
+        line-height: 40px;
+        li {
+          float: left;
+        }
+        #paging {
+          float: right;
+          margin: 0 25px;
+        }
+        .all-check {
+          margin: 0 10px;
+        }
+        button {
+          margin: 0 20px;
+        }
+      }
+    }
+  }
+  .layui-btn {
+    background: #0069b6;
+    height: 30px;
+    line-height: 30px;
+  }
+}
+.layui-btn-disabled{
+  background: #f3f3f3 !important;
+}
+/**************************** 内容 end ****************************/
+/**************************** 弹窗 end ****************************/
+#popup {
+  .popup-content-box {
+    display: block;
+    margin: 20px;
+    border: 1px solid #f3f3f3;
+    .popup-list-title {
+      color: #026ab3;
+      background: #f3f3f3;
+      li {
+        float: left;
+        padding: 5px 0;
+      }
+      .name {
+        width: 130px;
+        text-align: left;
+        span {
+          margin-left: 15px;
+        }
+      }
+      .cell-phone {
+        width: 120px;
+        text-align: left;
+      }
+      .last-time {
+        width: 200px;
+        text-align: left;
+      }
+    }
+    .list-content {
+      line-height: 40px;
+      border-bottom: 1px solid #f3f3f3;
+      li {
+        float: left;
+      }
+      .user-name {
+        width: 130px;
+        text-align: left;
+        label {
+          padding-left: 10px;
+        }
+        span {
+          margin-left: 15px;
+        }
+        input {
+          width: 40px;
+          float: left;
+        }
+      }
+      .user-phone {
+        width: 120px;
+        text-align: left;
+      }
+      .user-last-time,.user-list-time {
+        width: 200px;
+        text-align: left;
+      }
+    }
+  }
+  .close-btn-box {
+    position: absolute;
+    bottom: 15px;
+    left: 668px;
+    right: 0;
+    margin: 0 auto;
+    .close-btn {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: 0 auto;
+    }
+  }
+
+}
+
+/**************************** 弹窗 start ****************************/
+/**************************** 分页 start ****************************/
+
+.pager {
+  > li {
+    display: inline-block;
+    min-width: 30px;
+    height: 30px;
+    padding: 5px;
+    margin: 0 2px;
+    line-height: 20px;
+    border-radius: 3px;
+    border: 1px solid $black2;
+    & > i {
+      font-size: 12px;
+    }
+    &.active {
+      color: $white;
+      background: $blue;
+      border: 1px solid $blue;
+      cursor: default;
+      &:hover {
+        color: $white;
+        border: 1px solid $blue;
+        cursor: default;
+      }
+    }
+    &.disabled {
+      color: $black5;
+      border: 1px solid $black5;
+      cursor: not-allowed;
+      &:hover {
+        color: $black5;
+        border: 1px solid $black5;
+        cursor: not-allowed;
+      }
+    }
+    &:hover {
+      color: $blue;
+      border: 1px solid $blue;
+      cursor: pointer;
+    }
+    &.total {
+      border: none;
+      &:hover {
+        color: $black2;
+        border: none;
+        cursor: default;
+      }
+    }
+    .PageNum {
+      width: 30px;
+      padding: 0;
+      border: none;
+      text-align: center;
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+      &[type="number"] {
+        -moz-appearance: textfield;
+      }
+    }
+  }
+}
+
+/**************************** 分页 end ****************************/
+
+/****************************** 响应式 开始 ******************************/
+
+@media screen and (max-width: 1366px) {
+  .wrapper-content {
+    width: 1366px;
+  }
+  .nav {
+    width: 1366px;
+  }
+}
+
+/****************************** 响应式 结束 ******************************/

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="js/layui/2.3.0/css/layui.css">
+    <link rel="stylesheet" href="css/home_icon.css">
+    <link rel="stylesheet" href="css/icheck.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <title>订餐系统后台管理</title>
+</head>
+<body>
+<div class="nav">
+    <span class="title">订餐系统后台管理</span>
+    <div class="user-login">
+        <i class="layui-icon">&#xe770;</i>
+        <span>欢迎您，<span>admin</span></span>
+    </div>
+</div>
+
+<div class="wrapper-content">
+
+    <div class="left-menu">
+        <div class="management active"><i class="layui-icon" style="margin: 0 5px;">&#xe60b;</i>订单管理</div>
+        <ul class="column clearfix">
+            <li class="today-order li_active clearfix" model="today-order"><span>今日订单</span></li>
+            <li class="order-history  clearfix" model="order-history"><span>历史订单</span></li>
+        </ul>
+        <div class="role-management"><i class="layui-icon" style="margin: 0 5px;">&#xe857;</i>角色管理</div>
+    </div>
+
+    <div class="right-list">
+        <div class="list-title clearfix">
+            <div class="find-nav">
+                <i class="layui-icon">&#xe68e;</i>&nbsp;&nbsp;
+                <span>当前位置：<span>订单管理<i class="layui-icon">&#xe602;</i><span>今日订单</span></span></span>
+            </div>
+            <div class="btnGroup">
+                <button class="layui-btn download hidden today" >下载列表</button>
+                <button class="layui-btn download hidden order" >下载列表</button>
+            </div>
+            <div class="data-time"><i class="layui-icon">&#xe60e;</i>今天是2014年12月29日&nbsp;星期一</div>
+            <div class="num">订单总价</div>
+        </div>
+        <div class="indent-list">
+
+        </div>
+    </div>
+</div>
+<div id="popup" style="display: none">
+    <div class="popup-content-box">
+        <ul class="popup-list-title clearfix">
+            <li class="name"><span>姓名</span></li>
+            <li class="cell-phone">手机号</li>
+            <li class="last-time">最后操作时间</li>
+            <li class="last-time">支付状态</li>
+        </ul>
+        <div class="popup-list"></div>
+        <div id="popup-page"></div>
+    </div>
+    <div class="close-btn-box">
+        <button class="layui-btn layui-btn-normal close-btn">关闭</button>
+    </div>
+</div>
+
+</body>
+<script src="js/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/iCheck/icheck.min.js"></script>
+<script src="js/layui/2.2.3/layui.js"></script>
+
+<script src="js/address.js"></script>
+<script src="js/index.js"></script>
+<script src="js/order-history.js"></script>
+<script src="js/today-order.js"></script>
+</html>
